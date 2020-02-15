@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8481b459f48f5ba46a241f58083fd728
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - textBackground: {instanceID: 0}
+  - VoiceSource: {instanceID: 0}
+  - guideClip: {fileID: 8300000, guid: 0d36a34536ff586438a5ac58a9de14e9, type: 3}
+  - guideClip2: {fileID: 8300000, guid: 975c866e6d4301b4f8eafccd68a2c2de, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
