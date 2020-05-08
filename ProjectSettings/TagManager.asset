@@ -24,6 +24,13 @@ TagManager:
   - bgcanvas
   - InitialResume
   - StartText
+  - NetZone
+  - CycleZone
+  - Human
+  - Vehicle
+  - VehicleLeft
+  - VehicleRight
+  - trashcan
   layers:
   - Default
   - TransparentFX
@@ -33,7 +40,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - NetController
   - 
   - 
   - 

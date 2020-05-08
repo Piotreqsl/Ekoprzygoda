@@ -36,6 +36,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Swiatla3.unity
     guid: 78898fc82b3ee494c990762cefcc451e
   - enabled: 1
-    path: Assets/Scenes/Zolw.unity
+    path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/AR.unity
+    guid: 40a6d3ba64dfad34fada7aa3aff32277
+  - enabled: 1
+    path: Assets/Scenes/test 1.unity
+    guid: 478f4ec4a93f699449566faed765211d
+  - enabled: 1
+    path: Assets/Scenes/test 2.unity
+    guid: 3741b09af35fba848860c83a344c015b
+  - enabled: 1
+    path: Assets/Scenes/Car.unity
+    guid: beee7533fc42f754db35b9e3b838c186
+  m_configObjects: {com.unity.xr.arcore.PlayerSettings: {fileID: 11400000, guid: 7c181f20ec7303f4baae21be008b8c07,
+      type: 2}, com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a6bde53106a85f84faed77bf159eefa3,
+      type: 2}}

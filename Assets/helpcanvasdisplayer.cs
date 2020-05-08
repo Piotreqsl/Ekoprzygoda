@@ -12,7 +12,7 @@ public class helpcanvasdisplayer : MonoBehaviour
 
     public string nazwaLewelaUnikatowa;
     Button resumet;
- public void openHelp()
+    public void openHelp()
     {
 
         helpCanv.SetActive(true);
@@ -25,7 +25,7 @@ public class helpcanvasdisplayer : MonoBehaviour
 
     }
 
-    public void closeHelp()
+   public void closeHelp()
     {
         SetterPause.wantToClose = true;
         SetterPause.message.text = "";

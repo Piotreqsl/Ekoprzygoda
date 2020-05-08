@@ -7,8 +7,8 @@ public class LevelUnlocker : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public string LevelName;
-    public bool canClick = false;
+    [SerializeField] private string LevelName;
+    [SerializeField] private bool canClick = false;
     public static bool HelpIsActive = false;
     
 

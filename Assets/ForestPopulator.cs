@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = System.Random;
 
@@ -11,26 +15,25 @@ public class ForestPopulator : MonoBehaviour
     
 
     SpriteRenderer sr;
-    public String[] arr;
-    public int numberOfPositions;
-    public static int numberOfPositionsSecond;
+    [SerializeField] private String[] arr;
+    [SerializeField] private int numberOfPositions;
+    [SerializeField] private static int numberOfPositionsSecond;
 
 
-    public int timeToRespawnNewOne;
-    public float czasGry;
+    [SerializeField] private int timeToRespawnNewOne;
+    [SerializeField] private float czasGry;
 
     float gameTime;
 
     Button btn;
+
     Button help;
 
-
-
     GameObject[] goList;
-    public GameObject[] vectorki;
-    public static GameObject[] vectorki2;
-    public static int dlugosc;
-    public static int[] used;
+    [SerializeField] private GameObject[] vectorki;
+    [SerializeField] private static GameObject[] vectorki2;
+    [SerializeField] private static int dlugosc;
+    [SerializeField] private static int[] used;
 
    
 
@@ -42,12 +45,12 @@ public class ForestPopulator : MonoBehaviour
     string s;
     string m;
 
-    public GameObject helpCanv;
-    public GameObject winCanv;
-    public GameObject losCanv;
-    public GameObject initCanv;
+    [SerializeField] private GameObject helpCanv;
+    [SerializeField] private GameObject winCanv;
+    [SerializeField] private GameObject losCanv;
+    [SerializeField] private GameObject initCanv;
 
-    public string nazwaLewelaUnikatowa;
+    [SerializeField] private string nazwaLewelaUnikatowa;
 
     SetterPause sp;
 
@@ -86,6 +89,8 @@ public class ForestPopulator : MonoBehaviour
             }
 
             used[i] = rand;
+
+            Debug.Log(rand +  " dla int rownego "  + i );
 
             GameObject test = vectorki2[rand];
             Vector3 wektor = test.transform.position;
@@ -209,14 +214,6 @@ public class ForestPopulator : MonoBehaviour
     void Start()
     {
 
-        //TODO
-        // Serializować publici
-        // USunąć findy 
-        // Debug logi
-        // Klasa statyczna słowniczek
-        // Usunąć nieusuwane
-        // Zmienne lokalne na private
-        // Podkreślniki 
 
 
 
@@ -246,6 +243,8 @@ public class ForestPopulator : MonoBehaviour
         // Miejsca w użyciu
         used = new int[dlugosc + 1];
 
+
+        //Serialize 
         czasgry = GameObject.Find("czasGry").GetComponent<Text>();
         przedmiotyLeft = GameObject.Find("przedmioty").GetComponent<Text>();
 

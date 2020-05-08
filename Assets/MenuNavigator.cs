@@ -22,14 +22,16 @@ public class MenuNavigator : MonoBehaviour
         
     }
 
-    public void onHome() {
+    [SerializeField]
+    private void onHome() {
 
         SceneManager.LoadScene(1);
         Time.timeScale = 1;
 
     }
 
-    public void onFwd()
+    [SerializeField]
+    private void onFwd()
     {
 
         int i = SceneManager.GetActiveScene().buildIndex;
@@ -37,7 +39,8 @@ public class MenuNavigator : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void onReplay() {
+    [SerializeField]
+    private void onReplay() {
 
         int i = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(i);

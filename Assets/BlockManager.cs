@@ -40,7 +40,7 @@ public class BlockManager : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
 
         timeLeft = Random.Range(timeLeft_val1, timeLeft_val2);
-        Debug.Log(timeLeft);
+        
         eh = GameObject.Find("_mainCanvas").GetComponent<ElectricityHandler>();
         // LightTimer = 5f;
 
@@ -92,7 +92,7 @@ public class BlockManager : MonoBehaviour
             {
 
                 timeLeft = Random.Range(3, 16);
-                Debug.Log(timeLeft);
+               // Debug.Log(timeLeft);
 
                 if (animator.GetBool("walkin") == false && animator.GetBool("idle") == false)
                 {
@@ -123,7 +123,7 @@ public class BlockManager : MonoBehaviour
 
     
 
- void OnMouseDown()
+  void OnMouseDown()
     {
         if(light_on.GetComponent<SpriteRenderer>().enabled == true) { 
         lightIsOn = !lightIsOn;
@@ -140,7 +140,7 @@ public class BlockManager : MonoBehaviour
             timeToWin.GetComponent<Text>().text = "zabrakło: " + timelefttxt.GetComponent<Text>().text;
             this.GetComponent<BoxCollider2D>().enabled = false;
             maincanvas.GetComponent<ElectricityHandler>().isLost = true;
-            Debug.Log("PRZEGRANA");
+            //Debug.Log("PRZEGRANA");
             Time.timeScale = 0;
             
             

@@ -10,17 +10,17 @@ public class SetterPause : MonoBehaviour, IPointerClickHandler
 
     //public Sprite guideRes;
 
-    public Sprite textBackground;
+    [SerializeField] private Sprite textBackground;
     Image TextBG;
 
     Image img;
-    public string wiadomosc;
+    [SerializeField] private string wiadomosc;
     public static Text message;
     // public float delay;
 
     //public static float delayother;
 
-    public float delayStart;
+    [SerializeField] private float delayStart;
 
     public static float delayotherStart;
 
@@ -28,7 +28,7 @@ public class SetterPause : MonoBehaviour, IPointerClickHandler
     public static string wiadomoscother;
 
     public static bool CanStart = false;
-    public static bool isPlaying = false;
+    [SerializeField] private static bool isPlaying = false;
 
 
 
@@ -41,22 +41,22 @@ public class SetterPause : MonoBehaviour, IPointerClickHandler
 
     public static IEnumerator c1;
 
-    public static Coroutine theCoroutine;
+    [SerializeField] private static Coroutine theCoroutine;
 
 
-    public AudioSource VoiceSource;
+    [SerializeField] private AudioSource VoiceSource;
 
 
 
-    public AudioClip guideClip;
-    public bool hasMoreThanOneAudioClip;
+    [SerializeField] private AudioClip guideClip;
+    [SerializeField] private bool hasMoreThanOneAudioClip;
 
 
 
     float tekst;
     float audio;
 
-    public static float interval;
+    [SerializeField] private static float interval;
 
 
 
@@ -104,9 +104,9 @@ public class SetterPause : MonoBehaviour, IPointerClickHandler
 
         interval = countInterval(audio, tekst);
 
-        Debug.Log("Dlugosc audio  to " + audio);
-        Debug.Log("Dlugosc tekst  to " + tekst);
-        Debug.Log("Dlugosc  interva to " + interval);
+       // Debug.Log("Dlugosc audio  to " + audio);
+        //Debug.Log("Dlugosc tekst  to " + tekst);
+        //Debug.Log("Dlugosc  interva to " + interval);
 
 
     }
@@ -121,7 +121,8 @@ public class SetterPause : MonoBehaviour, IPointerClickHandler
 
 
 
-    public static IEnumerator PlayText()
+    [SerializeField]
+    private static IEnumerator PlayText()
     {
         yield return new WaitForSecondsRealtime(delayotherStart);
         
@@ -147,14 +148,14 @@ public class SetterPause : MonoBehaviour, IPointerClickHandler
         theCoroutine = StartCoroutine(PlayText());
         isPlaying = true;
         VoiceSource.PlayDelayed(delayotherStart);
-        Debug.Log("Zaczelo grac");
+        //Debug.Log("Zaczelo grac");
 
     }
 
 
     void close()
     {
-        Debug.Log("Zastopowało");
+        //Debug.Log("Zastopowało");
         StopAllCoroutines();
         isPlaying = false;
         message.text = "";
@@ -202,7 +203,7 @@ public class SetterPause : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Nacisk na canvasa;");
+        //Debug.Log("Nacisk na canvasa;");
 
         StopAllCoroutines();
         message.text = wiadomosc;

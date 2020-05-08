@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class NextLevelUnlocker : MonoBehaviour
 {
-    public string nextLevel;
+    [SerializeField] private string nextLevel;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        Debug.Log("Wygrana pokazala sie!");
+        //Debug.Log("Wygrana pokazala sie!");
 
         if (PlayerPrefs.HasKey(nextLevel))
         {

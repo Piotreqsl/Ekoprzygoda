@@ -12,7 +12,7 @@ public class InitialHelp : MonoBehaviour, IPointerClickHandler
     Image img;
     public string wiadomosc;
     public static string wiadomoscother;
-   
+
 
 
     public string wiadomosc2;
@@ -25,7 +25,7 @@ public class InitialHelp : MonoBehaviour, IPointerClickHandler
     public float delayStart;
 
     public static float delayotherStart;
-    
+
 
 
 
@@ -43,7 +43,7 @@ public class InitialHelp : MonoBehaviour, IPointerClickHandler
 
 
 
-  
+
 
     public static Coroutine theCoroutine;
     public static Coroutine theCoroutine2;
@@ -174,7 +174,7 @@ public class InitialHelp : MonoBehaviour, IPointerClickHandler
 
     void close()
     {
-      
+        //Debug.Log("Zastopowało");
         StopAllCoroutines();
         isPlaying = false;
         message.text = "";
@@ -277,9 +277,9 @@ public class InitialHelp : MonoBehaviour, IPointerClickHandler
 
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+   public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Nacisk na canvasa;");
+        //Debug.Log("Nacisk na canvasa;");
 
         StopAllCoroutines();
 

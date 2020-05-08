@@ -15,7 +15,8 @@ public class MenuGameControl : MonoBehaviour
     Button resumet;
 
 
-    public void openHelp()
+    [SerializeField]
+    private void openHelp()
     {
 
         helpCanv.SetActive(true);
@@ -23,7 +24,7 @@ public class MenuGameControl : MonoBehaviour
         SetterPause.CanStart = true;
         Time.timeScale = 0;
         
-        Debug.Log("Opened");
+        //Debug.Log("Opened");
 
         helpIsActive = true;
         
@@ -31,7 +32,8 @@ public class MenuGameControl : MonoBehaviour
 
     }
 
-    public void closeHelp()
+    [SerializeField]
+    private void closeHelp()
     {
         SetterPause.wantToClose = true;
         SetterPause.message.text = "";
@@ -47,7 +49,8 @@ public class MenuGameControl : MonoBehaviour
 
     }
 
-    public void openInitial()
+    [SerializeField]
+    private void openInitial()
     {
         initialHelp.SetActive(true);
         initialHelp.GetComponent<Animator>().SetBool("canAnimate", true);
@@ -55,7 +58,7 @@ public class MenuGameControl : MonoBehaviour
         Time.timeScale = 0;
        
 
-        Debug.Log("Opened");
+        //Debug.Log("Opened");
     }
 
 
@@ -93,7 +96,7 @@ public class MenuGameControl : MonoBehaviour
 
         if (!PlayerPrefs.HasKey("Initial"))
         {
-            Debug.Log("Player prefów nie ma chyba");
+            //Debug.Log("Player prefów nie ma chyba");
 
             startText.SetActive(true);
 
@@ -139,7 +142,7 @@ public class MenuGameControl : MonoBehaviour
         }
     }
 
-    public void unlockAll()
+    [SerializeField] private void unlockAll()
     {
         PlayerPrefs.SetInt("Sortowanie", 1);//1
         PlayerPrefs.SetInt("Las", 1);//2

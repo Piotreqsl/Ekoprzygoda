@@ -8,8 +8,8 @@ public class SpriteRandomizerHP : MonoBehaviour
 
        
     public static Sprite[] sprites;
-    public static GameObject guide;
-    public static float timer;
+    [SerializeField] private static GameObject guide;
+    [SerializeField] private static float timer;
     float bckTimer;
 
     void Start()

@@ -5,7 +5,7 @@ using UnityEngine;
 public class CanvasCenterScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Vector3 pos;
+    [SerializeField] private Vector3 pos;
     
     void Start()
     {

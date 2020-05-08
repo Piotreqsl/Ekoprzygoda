@@ -1,0 +1,285 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &456451317843619692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3062259547298736475}
+  - component: {fileID: 4977750103226989081}
+  - component: {fileID: 3101590635786036363}
+  - component: {fileID: 691220750811864547}
+  - component: {fileID: 4463689707966610097}
+  - component: {fileID: 5618378443941282384}
+  - component: {fileID: 2387388005309716042}
+  - component: {fileID: 8519732781556295256}
+  - component: {fileID: 3575350469272924036}
+  - component: {fileID: 4349625725733870609}
+  - component: {fileID: 2992128384136432953}
+  - component: {fileID: 7702315217576003585}
+  - component: {fileID: 3437947459258359808}
+  m_Layer: 0
+  m_Name: bin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3062259547298736475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456451317843619692}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.22487, y: 0.22487, z: 0.22487}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!33 &4977750103226989081
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456451317843619692}
+  m_Mesh: {fileID: -6227966251424968200, guid: 13329175c7397eb47bc088dd77073228, type: 3}
+--- !u!23 &3101590635786036363
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456451317843619692}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -6478536213147159724, guid: 13329175c7397eb47bc088dd77073228, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!64 &691220750811864547
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456451317843619692}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -6227966251424968200, guid: 13329175c7397eb47bc088dd77073228, type: 3}
+--- !u!114 &4463689707966610097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456451317843619692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5739a39dbe08e2c41b97743d8034713c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rodzaj: 
+  acceptedItems:
+  - kartki
+  - karton
+  - zeszyt
+  - zeszyt2
+  - zeszyt3
+  spawnpoint: {x: 0, y: 0, z: 0}
+  s: {fileID: 0}
+  trashcan: {x: 0, y: 0, z: 0}
+  isOverTrashcan: 0
+  maxScore: 0
+  button: {fileID: 0}
+  winCanv: {fileID: 0}
+  losCanv: {fileID: 0}
+  initCanv: {fileID: 0}
+  nazwaLewelaUnikatowa: 
+--- !u!64 &5618378443941282384
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456451317843619692}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -6227966251424968200, guid: 13329175c7397eb47bc088dd77073228, type: 3}
+--- !u!114 &2387388005309716042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456451317843619692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5739a39dbe08e2c41b97743d8034713c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rodzaj: 
+  acceptedItems:
+  - garnek
+  - butelka plastikowa
+  - metalowa puszka
+  - kartonik po mleku
+  spawnpoint: {x: 0, y: 0, z: 0}
+  s: {fileID: 0}
+  trashcan: {x: 0, y: 0, z: 0}
+  isOverTrashcan: 0
+  maxScore: 0
+  button: {fileID: 0}
+  winCanv: {fileID: 0}
+  losCanv: {fileID: 0}
+  initCanv: {fileID: 0}
+  nazwaLewelaUnikatowa: 
+--- !u!64 &8519732781556295256
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456451317843619692}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -6227966251424968200, guid: 13329175c7397eb47bc088dd77073228, type: 3}
+--- !u!114 &3575350469272924036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456451317843619692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5739a39dbe08e2c41b97743d8034713c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rodzaj: 
+  acceptedItems:
+  - ogryzek
+  - "Sk\xF3rka od banana"
+  - skorupka
+  spawnpoint: {x: 0, y: 0, z: 0}
+  s: {fileID: 0}
+  trashcan: {x: 0, y: 0, z: 0}
+  isOverTrashcan: 0
+  maxScore: 0
+  button: {fileID: 0}
+  winCanv: {fileID: 0}
+  losCanv: {fileID: 0}
+  initCanv: {fileID: 0}
+  nazwaLewelaUnikatowa: 
+--- !u!64 &4349625725733870609
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456451317843619692}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -6227966251424968200, guid: 13329175c7397eb47bc088dd77073228, type: 3}
+--- !u!64 &2992128384136432953
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456451317843619692}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -6227966251424968200, guid: 13329175c7397eb47bc088dd77073228, type: 3}
+--- !u!64 &7702315217576003585
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456451317843619692}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -6227966251424968200, guid: 13329175c7397eb47bc088dd77073228, type: 3}
+--- !u!114 &3437947459258359808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456451317843619692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5739a39dbe08e2c41b97743d8034713c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rodzaj: 
+  acceptedItems:
+  - butelka
+  - butelka2
+  - "s\u0142oik"
+  spawnpoint: {x: 0, y: 0, z: 0}
+  s: {fileID: 0}
+  trashcan: {x: 0, y: 0, z: 0}
+  isOverTrashcan: 0
+  maxScore: 0
+  button: {fileID: 0}
+  winCanv: {fileID: 0}
+  losCanv: {fileID: 0}
+  initCanv: {fileID: 0}
+  nazwaLewelaUnikatowa: 

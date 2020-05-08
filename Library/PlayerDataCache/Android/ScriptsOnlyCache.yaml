@@ -1,16 +1,17 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - Background
     - BlockManager
     - CanvasCenterScript
-    - Destroyer
+    - CarController
+    - CarDestroyerCycleZone
     - DragAndDrop
-    - EasyMobile.EM_Settings
     - ElectricityHandler
     - ForestNamePicker
     - ForestPopulator
+    - HumanDragger
     - InitialHelp
+    - LevelLoader
     - LevelUnlocker
     - MainMenuScript
     - MenuGameControl
@@ -18,41 +19,45 @@ ScriptsOnlyBuild:
     - NamePicker
     - NextLevelUnlocker
     - ObjectInForest
-    - Obstacle
-    - ObstacleSpawn
-    - Player
-    - Restart
+    - RiverTrash
     - SMB
     - SMB1
     - SMB2
     - SMB3
     - SMB5
-    - Score
     - ScoreCounter
     - SetterPause
-    - Spawner
+    - SingleCarController
     - SpritePicker
     - Stopwatch_universal
+    - TapToPlace
     - TrashIdentifier
     - fader_menu
-    - helpcanvasdisplayer
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
-    - UnityEditor.Graphs.AnimatorControllerTool
+    Unity.XR.ARCore.Editor.dll:
+    - UnityEditor.XR.ARCore.ARCoreSettings
+    Unity.XR.ARFoundation.dll:
+    - UnityEngine.XR.ARFoundation.ARCameraBackground
+    - UnityEngine.XR.ARFoundation.ARCameraManager
+    - UnityEngine.XR.ARFoundation.ARInputManager
+    - UnityEngine.XR.ARFoundation.ARPlaneManager
+    - UnityEngine.XR.ARFoundation.ARRaycastManager
+    - UnityEngine.XR.ARFoundation.ARSession
+    - UnityEngine.XR.ARFoundation.ARSessionOrigin
+    Unity.XR.Management.Editor.dll:
+    - UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget
+    Unity.XR.Management.dll:
+    - UnityEngine.XR.Management.XRGeneralSettings
+    - UnityEngine.XR.Management.XRManagerSettings
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
+    UnityEngine.SpatialTracking.dll:
+    - UnityEngine.SpatialTracking.TrackedPoseDriver
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -63,7 +68,177 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Outline
     - UnityEngine.UI.Shadow
     - UnityEngine.UI.Text
+    com.unity.multiplayer-hlapi.Runtime.dll:
+    - UnityEngine.Networking.NetworkIdentity
   sceneClasses:
+    Assets/Scenes/AR.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9734}
+    - Class: 114
+      Script: {instanceID: 9980}
+    - Class: 114
+      Script: {instanceID: 10040}
+    - Class: 114
+      Script: {instanceID: 10086}
+    - Class: 114
+      Script: {instanceID: 10278}
+    - Class: 114
+      Script: {instanceID: 10518}
+    - Class: 114
+      Script: {instanceID: 10618}
+    - Class: 114
+      Script: {instanceID: 11224}
+    - Class: 114
+      Script: {instanceID: 11550}
+    - Class: 114
+      Script: {instanceID: 11760}
+    - Class: 114
+      Script: {instanceID: 11914}
+    - Class: 114
+      Script: {instanceID: 11954}
+    - Class: 114
+      Script: {instanceID: 12054}
+    - Class: 114
+      Script: {instanceID: 12148}
+    - Class: 114
+      Script: {instanceID: 12170}
+    - Class: 114
+      Script: {instanceID: 12334}
+    - Class: 114
+      Script: {instanceID: 12470}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Car.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9734}
+    - Class: 114
+      Script: {instanceID: 9912}
+    - Class: 114
+      Script: {instanceID: 9980}
+    - Class: 114
+      Script: {instanceID: 10040}
+    - Class: 114
+      Script: {instanceID: 10276}
+    - Class: 114
+      Script: {instanceID: 10504}
+    - Class: 114
+      Script: {instanceID: 10526}
+    - Class: 114
+      Script: {instanceID: 10618}
+    - Class: 114
+      Script: {instanceID: 10654}
+    - Class: 114
+      Script: {instanceID: 10720}
+    - Class: 114
+      Script: {instanceID: 10882}
+    - Class: 114
+      Script: {instanceID: 11144}
+    - Class: 114
+      Script: {instanceID: 11224}
+    - Class: 114
+      Script: {instanceID: 11340}
+    - Class: 114
+      Script: {instanceID: 11346}
+    - Class: 114
+      Script: {instanceID: 11914}
+    - Class: 114
+      Script: {instanceID: 12072}
+    - Class: 114
+      Script: {instanceID: 12308}
+    - Class: 114
+      Script: {instanceID: 12370}
+    - Class: 114
+      Script: {instanceID: 12434}
+    - Class: 114
+      Script: {instanceID: 12470}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/Las.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -94,43 +269,43 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9782}
+      Script: {instanceID: 9734}
     - Class: 114
-      Script: {instanceID: 10024}
+      Script: {instanceID: 9980}
     - Class: 114
-      Script: {instanceID: 10090}
+      Script: {instanceID: 10040}
     - Class: 114
-      Script: {instanceID: 10578}
+      Script: {instanceID: 10526}
     - Class: 114
-      Script: {instanceID: 10678}
+      Script: {instanceID: 10618}
     - Class: 114
-      Script: {instanceID: 10722}
+      Script: {instanceID: 10654}
     - Class: 114
-      Script: {instanceID: 10784}
+      Script: {instanceID: 10720}
     - Class: 114
-      Script: {instanceID: 11040}
+      Script: {instanceID: 10990}
     - Class: 114
-      Script: {instanceID: 11218}
+      Script: {instanceID: 11144}
     - Class: 114
-      Script: {instanceID: 11318}
+      Script: {instanceID: 11224}
     - Class: 114
-      Script: {instanceID: 11440}
+      Script: {instanceID: 11340}
     - Class: 114
-      Script: {instanceID: 11444}
+      Script: {instanceID: 11346}
     - Class: 114
-      Script: {instanceID: 12042}
+      Script: {instanceID: 11914}
     - Class: 114
-      Script: {instanceID: 12050}
+      Script: {instanceID: 11930}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 12308}
     - Class: 114
-      Script: {instanceID: 12536}
+      Script: {instanceID: 12370}
     - Class: 114
-      Script: {instanceID: 12598}
+      Script: {instanceID: 12440}
     - Class: 114
-      Script: {instanceID: 12620}
+      Script: {instanceID: 12470}
     - Class: 114
-      Script: {instanceID: 77056}
+      Script: {instanceID: 29906}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -177,41 +352,41 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9782}
+      Script: {instanceID: 9734}
     - Class: 114
-      Script: {instanceID: 10024}
+      Script: {instanceID: 9980}
     - Class: 114
-      Script: {instanceID: 10090}
+      Script: {instanceID: 10040}
     - Class: 114
-      Script: {instanceID: 10578}
+      Script: {instanceID: 10526}
     - Class: 114
-      Script: {instanceID: 10678}
+      Script: {instanceID: 10618}
     - Class: 114
-      Script: {instanceID: 10722}
+      Script: {instanceID: 10654}
     - Class: 114
-      Script: {instanceID: 10784}
+      Script: {instanceID: 10720}
     - Class: 114
-      Script: {instanceID: 11040}
+      Script: {instanceID: 10990}
     - Class: 114
-      Script: {instanceID: 11218}
+      Script: {instanceID: 11144}
     - Class: 114
-      Script: {instanceID: 11318}
+      Script: {instanceID: 11224}
     - Class: 114
-      Script: {instanceID: 11440}
+      Script: {instanceID: 11340}
     - Class: 114
-      Script: {instanceID: 11444}
+      Script: {instanceID: 11346}
     - Class: 114
-      Script: {instanceID: 12042}
+      Script: {instanceID: 11914}
     - Class: 114
-      Script: {instanceID: 12050}
+      Script: {instanceID: 11930}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 12308}
     - Class: 114
-      Script: {instanceID: 12536}
+      Script: {instanceID: 12370}
     - Class: 114
-      Script: {instanceID: 12598}
+      Script: {instanceID: 12440}
     - Class: 114
-      Script: {instanceID: 12620}
+      Script: {instanceID: 12470}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -237,13 +412,21 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
     - Class: 61
+      Script: {instanceID: 0}
+    - Class: 65
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
@@ -257,37 +440,57 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9782}
+      Script: {instanceID: 9734}
     - Class: 114
-      Script: {instanceID: 10024}
+      Script: {instanceID: 9784}
     - Class: 114
-      Script: {instanceID: 10090}
+      Script: {instanceID: 9906}
     - Class: 114
-      Script: {instanceID: 10158}
+      Script: {instanceID: 9908}
     - Class: 114
-      Script: {instanceID: 10290}
+      Script: {instanceID: 9980}
     - Class: 114
-      Script: {instanceID: 10578}
+      Script: {instanceID: 9996}
     - Class: 114
-      Script: {instanceID: 10678}
+      Script: {instanceID: 10026}
     - Class: 114
-      Script: {instanceID: 11218}
+      Script: {instanceID: 10040}
     - Class: 114
-      Script: {instanceID: 11318}
+      Script: {instanceID: 10106}
     - Class: 114
-      Script: {instanceID: 11440}
+      Script: {instanceID: 10300}
     - Class: 114
-      Script: {instanceID: 12042}
+      Script: {instanceID: 10526}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 10618}
     - Class: 114
-      Script: {instanceID: 12536}
+      Script: {instanceID: 11142}
     - Class: 114
-      Script: {instanceID: 12620}
+      Script: {instanceID: 11144}
+    - Class: 114
+      Script: {instanceID: 11224}
+    - Class: 114
+      Script: {instanceID: 11340}
+    - Class: 114
+      Script: {instanceID: 11692}
+    - Class: 114
+      Script: {instanceID: 11914}
+    - Class: 114
+      Script: {instanceID: 12308}
+    - Class: 114
+      Script: {instanceID: 12370}
+    - Class: 114
+      Script: {instanceID: 12470}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
+      Script: {instanceID: 0}
+    - Class: 136
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -298,6 +501,21 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/SampleScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 157
       Script: {instanceID: 0}
     Assets/Scenes/Sortowanie.unity:
     - Class: 1
@@ -331,45 +549,45 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9782}
+      Script: {instanceID: 9734}
     - Class: 114
-      Script: {instanceID: 10024}
+      Script: {instanceID: 9980}
     - Class: 114
-      Script: {instanceID: 10090}
+      Script: {instanceID: 10040}
     - Class: 114
-      Script: {instanceID: 10578}
+      Script: {instanceID: 10526}
     - Class: 114
-      Script: {instanceID: 10678}
+      Script: {instanceID: 10618}
     - Class: 114
-      Script: {instanceID: 10722}
+      Script: {instanceID: 10654}
     - Class: 114
-      Script: {instanceID: 10784}
+      Script: {instanceID: 10720}
     - Class: 114
-      Script: {instanceID: 11218}
+      Script: {instanceID: 11144}
     - Class: 114
-      Script: {instanceID: 11298}
+      Script: {instanceID: 11206}
     - Class: 114
-      Script: {instanceID: 11318}
+      Script: {instanceID: 11224}
     - Class: 114
-      Script: {instanceID: 11440}
+      Script: {instanceID: 11340}
     - Class: 114
-      Script: {instanceID: 11444}
+      Script: {instanceID: 11346}
     - Class: 114
-      Script: {instanceID: 11630}
+      Script: {instanceID: 11524}
     - Class: 114
-      Script: {instanceID: 11954}
+      Script: {instanceID: 11820}
     - Class: 114
-      Script: {instanceID: 12000}
+      Script: {instanceID: 11870}
     - Class: 114
-      Script: {instanceID: 12042}
+      Script: {instanceID: 11914}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 12308}
     - Class: 114
-      Script: {instanceID: 12536}
+      Script: {instanceID: 12370}
     - Class: 114
-      Script: {instanceID: 12620}
+      Script: {instanceID: 12470}
     - Class: 114
-      Script: {instanceID: 12674}
+      Script: {instanceID: 12506}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -418,45 +636,45 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9782}
+      Script: {instanceID: 9734}
     - Class: 114
-      Script: {instanceID: 10024}
+      Script: {instanceID: 9980}
     - Class: 114
-      Script: {instanceID: 10090}
+      Script: {instanceID: 10040}
     - Class: 114
-      Script: {instanceID: 10578}
+      Script: {instanceID: 10526}
     - Class: 114
-      Script: {instanceID: 10678}
+      Script: {instanceID: 10618}
     - Class: 114
-      Script: {instanceID: 10722}
+      Script: {instanceID: 10654}
     - Class: 114
-      Script: {instanceID: 10784}
+      Script: {instanceID: 10720}
     - Class: 114
-      Script: {instanceID: 11218}
+      Script: {instanceID: 11144}
     - Class: 114
-      Script: {instanceID: 11298}
+      Script: {instanceID: 11206}
     - Class: 114
-      Script: {instanceID: 11318}
+      Script: {instanceID: 11224}
     - Class: 114
-      Script: {instanceID: 11440}
+      Script: {instanceID: 11340}
     - Class: 114
-      Script: {instanceID: 11444}
+      Script: {instanceID: 11346}
     - Class: 114
-      Script: {instanceID: 11630}
+      Script: {instanceID: 11524}
     - Class: 114
-      Script: {instanceID: 11954}
+      Script: {instanceID: 11820}
     - Class: 114
-      Script: {instanceID: 12000}
+      Script: {instanceID: 11870}
     - Class: 114
-      Script: {instanceID: 12042}
+      Script: {instanceID: 11914}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 12308}
     - Class: 114
-      Script: {instanceID: 12536}
+      Script: {instanceID: 12370}
     - Class: 114
-      Script: {instanceID: 12620}
+      Script: {instanceID: 12470}
     - Class: 114
-      Script: {instanceID: 12674}
+      Script: {instanceID: 12506}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -504,46 +722,48 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9782}
+      Script: {instanceID: 9734}
     - Class: 114
-      Script: {instanceID: 10024}
+      Script: {instanceID: 9980}
     - Class: 114
-      Script: {instanceID: 10090}
+      Script: {instanceID: 10040}
     - Class: 114
-      Script: {instanceID: 10578}
+      Script: {instanceID: 10526}
     - Class: 114
-      Script: {instanceID: 10678}
+      Script: {instanceID: 10618}
     - Class: 114
-      Script: {instanceID: 10722}
+      Script: {instanceID: 10654}
     - Class: 114
-      Script: {instanceID: 10784}
+      Script: {instanceID: 10720}
     - Class: 114
-      Script: {instanceID: 11218}
+      Script: {instanceID: 11144}
     - Class: 114
-      Script: {instanceID: 11298}
+      Script: {instanceID: 11206}
     - Class: 114
-      Script: {instanceID: 11318}
+      Script: {instanceID: 11224}
     - Class: 114
-      Script: {instanceID: 11440}
+      Script: {instanceID: 11340}
     - Class: 114
-      Script: {instanceID: 11444}
+      Script: {instanceID: 11346}
     - Class: 114
-      Script: {instanceID: 11630}
+      Script: {instanceID: 11524}
     - Class: 114
-      Script: {instanceID: 11954}
+      Script: {instanceID: 11820}
     - Class: 114
-      Script: {instanceID: 12000}
+      Script: {instanceID: 11870}
     - Class: 114
-      Script: {instanceID: 12042}
+      Script: {instanceID: 11914}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 12308}
     - Class: 114
-      Script: {instanceID: 12536}
+      Script: {instanceID: 12370}
     - Class: 114
-      Script: {instanceID: 12620}
+      Script: {instanceID: 12470}
     - Class: 114
-      Script: {instanceID: 12674}
+      Script: {instanceID: 12506}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -590,49 +810,49 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9782}
+      Script: {instanceID: 9734}
     - Class: 114
-      Script: {instanceID: 9972}
+      Script: {instanceID: 9932}
     - Class: 114
-      Script: {instanceID: 10024}
+      Script: {instanceID: 9980}
     - Class: 114
-      Script: {instanceID: 10090}
+      Script: {instanceID: 10040}
     - Class: 114
-      Script: {instanceID: 10114}
+      Script: {instanceID: 10062}
     - Class: 114
-      Script: {instanceID: 10556}
+      Script: {instanceID: 10504}
     - Class: 114
-      Script: {instanceID: 10578}
+      Script: {instanceID: 10526}
     - Class: 114
-      Script: {instanceID: 10678}
+      Script: {instanceID: 10618}
     - Class: 114
-      Script: {instanceID: 10722}
+      Script: {instanceID: 10654}
     - Class: 114
-      Script: {instanceID: 10784}
+      Script: {instanceID: 10720}
     - Class: 114
-      Script: {instanceID: 10924}
+      Script: {instanceID: 10882}
     - Class: 114
-      Script: {instanceID: 11218}
+      Script: {instanceID: 11144}
     - Class: 114
-      Script: {instanceID: 11318}
+      Script: {instanceID: 11224}
     - Class: 114
-      Script: {instanceID: 11424}
+      Script: {instanceID: 11328}
     - Class: 114
-      Script: {instanceID: 11440}
+      Script: {instanceID: 11340}
     - Class: 114
-      Script: {instanceID: 11444}
+      Script: {instanceID: 11346}
     - Class: 114
-      Script: {instanceID: 11918}
+      Script: {instanceID: 11780}
     - Class: 114
-      Script: {instanceID: 12042}
+      Script: {instanceID: 11914}
     - Class: 114
-      Script: {instanceID: 12440}
+      Script: {instanceID: 12298}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 12308}
     - Class: 114
-      Script: {instanceID: 12536}
+      Script: {instanceID: 12370}
     - Class: 114
-      Script: {instanceID: 12620}
+      Script: {instanceID: 12470}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -679,49 +899,49 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9782}
+      Script: {instanceID: 9734}
     - Class: 114
-      Script: {instanceID: 9972}
+      Script: {instanceID: 9932}
     - Class: 114
-      Script: {instanceID: 10024}
+      Script: {instanceID: 9980}
     - Class: 114
-      Script: {instanceID: 10090}
+      Script: {instanceID: 10040}
     - Class: 114
-      Script: {instanceID: 10114}
+      Script: {instanceID: 10062}
     - Class: 114
-      Script: {instanceID: 10556}
+      Script: {instanceID: 10504}
     - Class: 114
-      Script: {instanceID: 10578}
+      Script: {instanceID: 10526}
     - Class: 114
-      Script: {instanceID: 10678}
+      Script: {instanceID: 10618}
     - Class: 114
-      Script: {instanceID: 10722}
+      Script: {instanceID: 10654}
     - Class: 114
-      Script: {instanceID: 10784}
+      Script: {instanceID: 10720}
     - Class: 114
-      Script: {instanceID: 10924}
+      Script: {instanceID: 10882}
     - Class: 114
-      Script: {instanceID: 11218}
+      Script: {instanceID: 11144}
     - Class: 114
-      Script: {instanceID: 11318}
+      Script: {instanceID: 11224}
     - Class: 114
-      Script: {instanceID: 11424}
+      Script: {instanceID: 11328}
     - Class: 114
-      Script: {instanceID: 11440}
+      Script: {instanceID: 11340}
     - Class: 114
-      Script: {instanceID: 11444}
+      Script: {instanceID: 11346}
     - Class: 114
-      Script: {instanceID: 11918}
+      Script: {instanceID: 11780}
     - Class: 114
-      Script: {instanceID: 12042}
+      Script: {instanceID: 11914}
     - Class: 114
-      Script: {instanceID: 12440}
+      Script: {instanceID: 12298}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 12308}
     - Class: 114
-      Script: {instanceID: 12536}
+      Script: {instanceID: 12370}
     - Class: 114
-      Script: {instanceID: 12620}
+      Script: {instanceID: 12470}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -768,49 +988,49 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9782}
+      Script: {instanceID: 9734}
     - Class: 114
-      Script: {instanceID: 9972}
+      Script: {instanceID: 9932}
     - Class: 114
-      Script: {instanceID: 10024}
+      Script: {instanceID: 9980}
     - Class: 114
-      Script: {instanceID: 10090}
+      Script: {instanceID: 10040}
     - Class: 114
-      Script: {instanceID: 10114}
+      Script: {instanceID: 10062}
     - Class: 114
-      Script: {instanceID: 10556}
+      Script: {instanceID: 10504}
     - Class: 114
-      Script: {instanceID: 10578}
+      Script: {instanceID: 10526}
     - Class: 114
-      Script: {instanceID: 10678}
+      Script: {instanceID: 10618}
     - Class: 114
-      Script: {instanceID: 10722}
+      Script: {instanceID: 10654}
     - Class: 114
-      Script: {instanceID: 10784}
+      Script: {instanceID: 10720}
     - Class: 114
-      Script: {instanceID: 10924}
+      Script: {instanceID: 10882}
     - Class: 114
-      Script: {instanceID: 11218}
+      Script: {instanceID: 11144}
     - Class: 114
-      Script: {instanceID: 11318}
+      Script: {instanceID: 11224}
     - Class: 114
-      Script: {instanceID: 11424}
+      Script: {instanceID: 11328}
     - Class: 114
-      Script: {instanceID: 11440}
+      Script: {instanceID: 11340}
     - Class: 114
-      Script: {instanceID: 11444}
+      Script: {instanceID: 11346}
     - Class: 114
-      Script: {instanceID: 11918}
+      Script: {instanceID: 11780}
     - Class: 114
-      Script: {instanceID: 12042}
+      Script: {instanceID: 11914}
     - Class: 114
-      Script: {instanceID: 12440}
+      Script: {instanceID: 12298}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 12308}
     - Class: 114
-      Script: {instanceID: 12536}
+      Script: {instanceID: 12370}
     - Class: 114
-      Script: {instanceID: 12620}
+      Script: {instanceID: 12470}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -857,39 +1077,39 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9782}
+      Script: {instanceID: 9734}
     - Class: 114
-      Script: {instanceID: 9944}
+      Script: {instanceID: 9902}
     - Class: 114
-      Script: {instanceID: 10024}
+      Script: {instanceID: 9980}
     - Class: 114
-      Script: {instanceID: 10034}
+      Script: {instanceID: 9992}
     - Class: 114
-      Script: {instanceID: 10090}
+      Script: {instanceID: 10040}
     - Class: 114
-      Script: {instanceID: 10578}
+      Script: {instanceID: 10526}
     - Class: 114
-      Script: {instanceID: 10678}
+      Script: {instanceID: 10618}
     - Class: 114
-      Script: {instanceID: 10722}
+      Script: {instanceID: 10654}
     - Class: 114
-      Script: {instanceID: 11218}
+      Script: {instanceID: 11144}
     - Class: 114
-      Script: {instanceID: 11318}
+      Script: {instanceID: 11224}
     - Class: 114
-      Script: {instanceID: 11440}
+      Script: {instanceID: 11340}
     - Class: 114
-      Script: {instanceID: 11444}
+      Script: {instanceID: 11346}
     - Class: 114
-      Script: {instanceID: 12042}
+      Script: {instanceID: 11914}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 12308}
     - Class: 114
-      Script: {instanceID: 12536}
+      Script: {instanceID: 12370}
     - Class: 114
-      Script: {instanceID: 12620}
+      Script: {instanceID: 12470}
     - Class: 114
-      Script: {instanceID: 12694}
+      Script: {instanceID: 12526}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -906,32 +1126,18 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    Assets/Scenes/Zolw.unity:
+    Assets/Scenes/test 1.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
       Script: {instanceID: 0}
     - Class: 20
       Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
     - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 50
-      Script: {instanceID: 0}
-    - Class: 58
-      Script: {instanceID: 0}
-    - Class: 61
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
-      Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 83
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -940,70 +1146,43 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9770}
+      Script: {instanceID: 9734}
     - Class: 114
-      Script: {instanceID: 9782}
+      Script: {instanceID: 10040}
     - Class: 114
-      Script: {instanceID: 9862}
+      Script: {instanceID: 10618}
     - Class: 114
-      Script: {instanceID: 10024}
-    - Class: 114
-      Script: {instanceID: 10082}
-    - Class: 114
-      Script: {instanceID: 10090}
-    - Class: 114
-      Script: {instanceID: 10578}
-    - Class: 114
-      Script: {instanceID: 10678}
-    - Class: 114
-      Script: {instanceID: 10722}
-    - Class: 114
-      Script: {instanceID: 11092}
-    - Class: 114
-      Script: {instanceID: 11168}
-    - Class: 114
-      Script: {instanceID: 11218}
-    - Class: 114
-      Script: {instanceID: 11318}
-    - Class: 114
-      Script: {instanceID: 11440}
-    - Class: 114
-      Script: {instanceID: 11444}
-    - Class: 114
-      Script: {instanceID: 11482}
-    - Class: 114
-      Script: {instanceID: 11498}
-    - Class: 114
-      Script: {instanceID: 11596}
-    - Class: 114
-      Script: {instanceID: 12042}
-    - Class: 114
-      Script: {instanceID: 12258}
+      Script: {instanceID: 11914}
     - Class: 114
       Script: {instanceID: 12450}
     - Class: 114
-      Script: {instanceID: 12536}
-    - Class: 114
-      Script: {instanceID: 12620}
+      Script: {instanceID: 12470}
     - Class: 115
       Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
     - Class: 157
-      Script: {instanceID: 0}
-    - Class: 198
-      Script: {instanceID: 0}
-    - Class: 199
-      Script: {instanceID: 0}
-    - Class: 212
-      Script: {instanceID: 0}
-    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
+      Script: {instanceID: 0}
+    Assets/Scenes/test 2.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 157
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -1020,10 +1199,10 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: f10ac67db067cde16cc4972b892b3c8a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Internal.Privacy
-    className: EditorConsentDialogToggleUI
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARPoseDriver
   - hash:
       serializedVersion: 2
       Hash: 3c08375166df118bd1801438fc36b92f
@@ -1056,16 +1235,10 @@ ScriptsOnlyBuild:
     className: Destroyer
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile
-    className: Gif
-  - hash:
-      serializedVersion: 2
-      Hash: 82a8b0204076dfadf18633818e381530
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: MediaDemo
+      Hash: 5bd9a19c7b5f76c563418e28f48a561b
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkLobbyPlayer
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -1086,10 +1259,16 @@ ScriptsOnlyBuild:
     className: MenuGameControl
   - hash:
       serializedVersion: 2
-      Hash: 4d43f34eea2dd4225ef09b80421208ba
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: AlertPopup
+    namespaceName: 
+    className: CarDestroyerCycleZone
+  - hash:
+      serializedVersion: 2
+      Hash: 04e4a8b0447477cc4e933d9e5311188f
+    assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
+    namespaceName: UnityEngine.XR.LegacyInputHelpers
+    className: ArmModel
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1110,12 +1289,6 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: NotificationHandler
-  - hash:
-      serializedVersion: 2
       Hash: 72712369a7c681ad84fc255a5ec0b333
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1134,6 +1307,12 @@ ScriptsOnlyBuild:
     className: LevelUnlocker
   - hash:
       serializedVersion: 2
+      Hash: eafb77726b67b7571818a7210a3ce11e
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkIdentity
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1144,6 +1323,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 98aa0a0c8ff2910eb12af89c7e0eb661
+    assemblyName: Unity.XR.Management.dll
+    namespaceName: UnityEngine.XR.Management
+    className: XRGeneralSettings
   - hash:
       serializedVersion: 2
       Hash: 7b7512573af84b68acf80b32e3edefde
@@ -1158,10 +1343,10 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
-      Hash: 3aa6d928304f064171dd9e6dc36df224
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile
-    className: ClipPlayer
+      Hash: 9b6303c7164a38e06044ec2036c18b6b
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARParticipantManager
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1176,16 +1361,22 @@ ScriptsOnlyBuild:
     className: SMB1
   - hash:
       serializedVersion: 2
-      Hash: 05de77f416dedc22db7c430db2076c9a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: DemoHomeController
-  - hash:
-      serializedVersion: 2
       Hash: 234235b9fb07320d11497e08a726cc56
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARRaycastManager
+  - hash:
+      serializedVersion: 2
+      Hash: ad9173d3a69d99153f38ed4b62226129
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkTransform
   - hash:
       serializedVersion: 2
       Hash: f63af9a58749063ed463113bf864b86f
@@ -1200,18 +1391,6 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile
-    className: InAppPurchasing
-  - hash:
-      serializedVersion: 2
-      Hash: a3248f711375be250db01806f7257f23
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: StringStringCollectionView
-  - hash:
-      serializedVersion: 2
       Hash: 8aa3d6ccbcb54ee8db6c1229854adaaa
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1224,10 +1403,10 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
-      Hash: 9064d9686b217b4057d1f4a39929ebc0
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: SoundManager
+    namespaceName: 
+    className: ARSpawner
   - hash:
       serializedVersion: 2
       Hash: 0dbc3be398b4869a5c8d0d8481ee402c
@@ -1242,16 +1421,16 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 10936477bc6360f05224433d07732cf9
+      Hash: e77f2d8afa604bbe744965a44d4ad08c
     assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile
-    className: EM_Settings
+    namespaceName: 
+    className: SingleCarController
   - hash:
       serializedVersion: 2
-      Hash: 72712369a7c681ad84fc255a5ec0b333
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Internal.Privacy
-    className: EditorConsentDialogClickableText
+      Hash: 7f5c55cb7b3151ce240452eb85500d32
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARPlaneManager
   - hash:
       serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
@@ -1260,10 +1439,22 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
+      Hash: 3f0b469d844365c00a63de0437c9b29e
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkProximityChecker
+  - hash:
+      serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: AspectRatioFitter
+  - hash:
+      serializedVersion: 2
+      Hash: f7c7d19a2cdf15b09a196947e21aac56
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameController
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1278,10 +1469,22 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: 32cb197771ea45335a049bfd6a142e4e
+      Hash: 290afc8da8e459e0b8dc7444bfaf5e35
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARAnchor
+  - hash:
+      serializedVersion: 2
+      Hash: 52bcb9c2a78bdd8d98a59e915c346e75
+    assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
+    namespaceName: UnityEngine.XR.LegacyInputHelpers
+    className: TransitionArmModel
+  - hash:
+      serializedVersion: 2
+      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
     assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: GameServicesDemo_Multiplayer_RealtimeKitchenSink
+    namespaceName: 
+    className: MoveSmoke
   - hash:
       serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
@@ -1302,16 +1505,22 @@ ScriptsOnlyBuild:
     className: ElectricityHandler
   - hash:
       serializedVersion: 2
+      Hash: d251bf88db6c95a6b1aa0b69298da9ef
+    assemblyName: UnityEngine.SpatialTracking.dll
+    namespaceName: UnityEngine.SpatialTracking
+    className: TrackedPoseDriver
+  - hash:
+      serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 08259231d397c2a022adf8fd3890a6ef
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: SharingDemo
+      Hash: e8733e39efa851172df1c9eaef062265
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARPlane
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
@@ -1324,24 +1533,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: ControlPlayableAsset
-  - hash:
-      serializedVersion: 2
-      Hash: 7e0a9f7f39f77325f608bb8c69a77f81
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: GameServicesDemo
-  - hash:
-      serializedVersion: 2
-      Hash: 3aa6d928304f064171dd9e6dc36df224
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile
-    className: ClipPlayerUI
-  - hash:
-      serializedVersion: 2
-      Hash: db6e3c9f680fdf7dee07f18f62d9963d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: Racing3DCarInputHandler
   - hash:
       serializedVersion: 2
       Hash: 5f649ca9f4107f84e671ef769328242d
@@ -1362,6 +1553,12 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
+      Hash: 290afc8da8e459e0b8dc7444bfaf5e35
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARFace
+  - hash:
+      serializedVersion: 2
       Hash: 8dc90e648ac06f43bdd31ac9fa8f4579
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1374,16 +1571,40 @@ ScriptsOnlyBuild:
     className: NextLevelUnlocker
   - hash:
       serializedVersion: 2
-      Hash: 59469c11e49758e361f6b231a2a75bca
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: PrivacyDemo
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.ARCore.dll
+    namespaceName: UnityEngine.XR.ARCore
+    className: ARCoreLoader
   - hash:
       serializedVersion: 2
-      Hash: 0a2e6b38fb129a4350af041b419f41c9
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: Racing3DGameControl
+      Hash: 1268406d3f2e4b2c2b670b560b6db769
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: AREnvironmentProbeManager
+  - hash:
+      serializedVersion: 2
+      Hash: 265cf27ba050d55ff33a8acab4ded6c0
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkLobbyManager
+  - hash:
+      serializedVersion: 2
+      Hash: 5887ef1bc706b22b773d253fd443ceef
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkTransformVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 290afc8da8e459e0b8dc7444bfaf5e35
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARParticipant
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARPlaneMeshVisualizer
   - hash:
       serializedVersion: 2
       Hash: 823e39bc3276748c401b3dd6149d14d7
@@ -1392,10 +1613,16 @@ ScriptsOnlyBuild:
     className: CanvasCenterScript
   - hash:
       serializedVersion: 2
-      Hash: 31582186ebece284a729fdc8d85c2208
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: DemoUtils
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.ARKit.dll
+    namespaceName: UnityEngine.XR.ARKit
+    className: ARKitLoader
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARBackgroundRendererFeature
   - hash:
       serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
@@ -1404,28 +1631,16 @@ ScriptsOnlyBuild:
     className: TMP_Asset
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: ColorChooser
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile
-    className: GameServices
-  - hash:
-      serializedVersion: 2
-      Hash: fbbec32c7a9827dfdc299fe06eabd9e3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: Racing3DCarControl
-  - hash:
-      serializedVersion: 2
       Hash: d4020bafcd3ccbb5601a6e6c8ac78be0
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: 4632a1062ac8865f91f6bdfe3c0ff90c
+    assemblyName: Unity.XR.ARCore.dll
+    namespaceName: UnityEngine.XR.ARCore
+    className: ARCoreLoaderSettings
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -1434,22 +1649,16 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 10d538cb955a8288a69a28723ff9f074
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: ContactView
-  - hash:
-      serializedVersion: 2
       Hash: 7c38ceb4f9799446dd6fefbc3f8f2430
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ForestPopulator
   - hash:
       serializedVersion: 2
-      Hash: c130489623a74655bcd098289eba13c9
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: ScrollableList
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkCallbacks
   - hash:
       serializedVersion: 2
       Hash: 57f9f03cfc106a269f93a1f57a0171d2
@@ -1458,10 +1667,22 @@ ScriptsOnlyBuild:
     className: Player
   - hash:
       serializedVersion: 2
+      Hash: 21e871d89bbce53c038fc75ad1b7c7f3
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkManager
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: 290afc8da8e459e0b8dc7444bfaf5e35
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARPointCloud
   - hash:
       serializedVersion: 2
       Hash: 4688b197c57c7c83b55a18050581cf6c
@@ -1488,18 +1709,6 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Internal.Privacy
-    className: NativeConsentDialogListener
-  - hash:
-      serializedVersion: 2
-      Hash: e4988feb1218c7b97633fbd04dbe2ff6
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: MediaResultView
-  - hash:
-      serializedVersion: 2
       Hash: 271b1bcd2ae9d0ea158714e4c9d58082
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1512,22 +1721,10 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: a5808af1697968805e992fbcc0b82dc6
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: LoadingPanelController
-  - hash:
-      serializedVersion: 2
       Hash: feb9a5a121d15fa3654d4e50a5233045
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile
-    className: AppLifecycleManager
   - hash:
       serializedVersion: 2
       Hash: 441abd3250d77852646b055a20396885
@@ -1542,22 +1739,28 @@ ScriptsOnlyBuild:
     className: MenuNavigator
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARFaceMeshVisualizer
+  - hash:
+      serializedVersion: 2
       Hash: c3681e1cba2f1f00c44cf0ca72d90a01
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InitialHelp
   - hash:
       serializedVersion: 2
-      Hash: 6569242ba17ec023558d681a395ffa54
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: UtilitiesDemo
-  - hash:
-      serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkStartPosition
   - hash:
       serializedVersion: 2
       Hash: 0a76064c8e16b2663790f852bbab4753
@@ -1572,10 +1775,22 @@ ScriptsOnlyBuild:
     className: Spawner
   - hash:
       serializedVersion: 2
-      Hash: 478db3ea376f687a1e0996363f405a2a
+      Hash: 0535c7e7c34dd1cdfc5b1f8ffce1aebe
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARTrackedImageManager
+  - hash:
+      serializedVersion: 2
+      Hash: f9957e0a82c513940ec416ff9799eabd
     assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: TicTacToeGameControl
+    namespaceName: 
+    className: NetController
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARPointCloudParticleVisualizer
   - hash:
       serializedVersion: 2
       Hash: 78d419082f9df8da21b9c588f64b392e
@@ -1596,28 +1811,22 @@ ScriptsOnlyBuild:
     className: TrashIdentifier
   - hash:
       serializedVersion: 2
-      Hash: 60d913ab4307d0334fb21935a4ad6e28
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: AddedStringStringView
-  - hash:
-      serializedVersion: 2
       Hash: c9a8b80298a116835b51ba1cf9284367
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalReceiver
   - hash:
       serializedVersion: 2
+      Hash: 840e65a413cc46ebbbbf200f4362a70c
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARSession
+  - hash:
+      serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: HorizontalLayoutGroup
-  - hash:
-      serializedVersion: 2
-      Hash: 3a7ad4db122aacc00b147e2c498a5878
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: TicTacToeGameView
   - hash:
       serializedVersion: 2
       Hash: 35a9693c388776aaf487636491a20f11
@@ -1644,10 +1853,16 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 62d24dc9808a278c045157f0f1d572e5
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: ColorHandler
+    namespaceName: 
+    className: TrashDetect
+  - hash:
+      serializedVersion: 2
+      Hash: 318c6c13a19c9fac98135ae14889de1b
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkMigrationManager
   - hash:
       serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
@@ -1656,28 +1871,40 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 93668d58b598e0170535ebaeb813f82d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Internal.Privacy
-    className: EditorConsentDialogToggleSwitch
+      Hash: 1d9b53318825332126b0fd6da2d962fb
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARAnchorManager
+  - hash:
+      serializedVersion: 2
+      Hash: 290afc8da8e459e0b8dc7444bfaf5e35
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARTrackedImage
+  - hash:
+      serializedVersion: 2
+      Hash: ca2a58dd7363525cbd2f65b2a150b41b
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARCameraManager
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: DigitalClock
-  - hash:
-      serializedVersion: 2
-      Hash: 97ee1920a4ad0337784d7a757190a52c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: ContactDemo
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkBehaviour
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SMB2
+  - hash:
+      serializedVersion: 2
+      Hash: d39905ff8fda75afed4d688761c322e1
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARFaceManager
   - hash:
       serializedVersion: 2
       Hash: 0879e671eb682e862e72325e27ce1bb0
@@ -1692,10 +1919,16 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: e8f1047b7882e5ad222931af61598c93
     assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile
-    className: Giphy
+    namespaceName: 
+    className: NetController_backup
+  - hash:
+      serializedVersion: 2
+      Hash: 16dacd04869a876ea4bea0d1d2e77e34
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARPointCloudManager
   - hash:
       serializedVersion: 2
       Hash: f29e32a945c6bcd8b982f50b059344c9
@@ -1716,16 +1949,22 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
+      Hash: dd9407f66e25540c75b606a1e1258e4a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TrashSpawner
+  - hash:
+      serializedVersion: 2
       Hash: 20c9a74d659b6895cfdb5f4624ba8daa
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ObjectInForest
   - hash:
       serializedVersion: 2
-      Hash: 90162e5e5a9a203330c54e41b0391434
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Internal.Privacy
-    className: EditorConsentDialogButtonUI
+      Hash: e1c35cdce946e9da77fe80a39c261608
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARSessionOrigin
   - hash:
       serializedVersion: 2
       Hash: 88cc9df3c6fc697bfbeacd24c0d6f2d7
@@ -1734,28 +1973,40 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile
-    className: Notifications
+      Hash: 4632a1062ac8865f91f6bdfe3c0ff90c
+    assemblyName: Unity.XR.ARKit.dll
+    namespaceName: UnityEngine.XR.ARKit
+    className: ARKitLoaderSettings
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile
-    className: StoreReview
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARPointCloudMeshVisualizer
   - hash:
       serializedVersion: 2
-      Hash: 1f4cae550a555b38ea7d6959a71d14de
+      Hash: e20a52ef4794d688e9398f48d8958934
     assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: NativeUIDemo
+    namespaceName: 
+    className: RiverTrash
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 2064293bce7212453a713fe8245294ca
     assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Internal
-    className: RuntimeHelper
+    namespaceName: 
+    className: HumanDragger
+  - hash:
+      serializedVersion: 2
+      Hash: 1dcb82730d983b77cec736c6ef19f814
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkDiscovery
+  - hash:
+      serializedVersion: 2
+      Hash: 893dbdbfe611d62e230a686ea89f1efd
+    assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
+    namespaceName: UnityEngine.XR.LegacyInputHelpers
+    className: SwingArmModel
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -1764,22 +2015,16 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
-      Hash: 0dc61040be1fc173ec3561dcd4573d17
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: ScrollableListItem
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Restart
   - hash:
       serializedVersion: 2
-      Hash: bfc3e3a0afdc0562a9f9e58a77998dcd
+      Hash: cd9cd13122c537e701c0b52fe70a5290
     assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: GameServicesDemo_Multiplayer_TurnbasedKitchenSink
+    namespaceName: 
+    className: TapToPlace
   - hash:
       serializedVersion: 2
       Hash: d791aa6007fa3640be1164ea75bb087d
@@ -1789,27 +2034,27 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile
-    className: Advertising
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARInputManager
+  - hash:
+      serializedVersion: 2
+      Hash: 1bc03a501323d00d0037a6b76d25a3ba
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARMeshManager
+  - hash:
+      serializedVersion: 2
+      Hash: e6ae40841db498b6e673877ac45ad208
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkAnimator
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TrashCounter
-  - hash:
-      serializedVersion: 2
-      Hash: ebd95eb01891ebeef710ba0bd1174f7e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: InAppPurchasingDemo
-  - hash:
-      serializedVersion: 2
-      Hash: e6d3ce620ee62a1c64290803fb486ff8
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: NotificationsDemo
   - hash:
       serializedVersion: 2
       Hash: ca2868172befd116035ec183394d7c06
@@ -1836,10 +2081,10 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
-      Hash: b09d402b561d16220fd7604a6d470045
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Internal.Privacy
-    className: EditorConsentDialogUI
+      Hash: cbe6deff75fc0987595a61e9510f7917
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARCameraBackground
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1854,28 +2099,22 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: e8ddafc6b01346f96db986b5fe8f9019
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: Racing3DCameraControl
-  - hash:
-      serializedVersion: 2
-      Hash: adcec9e3f73148a440d12f8e85112ad3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: Racing3DGameView
-  - hash:
-      serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Outline
   - hash:
       serializedVersion: 2
-      Hash: 22dde1cd6dd04bbaa360da32923f3c95
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile
-    className: Recorder
+      Hash: e0ee4b3d4e27318934cc940a969d3d96
+    assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
+    namespaceName: UnityEngine.Networking
+    className: NetworkManagerHUD
+  - hash:
+      serializedVersion: 2
+      Hash: 01473135d671a71d740e507b04eb93da
+    assemblyName: Unity.XR.ARSubsystems.dll
+    namespaceName: UnityEngine.XR.ARSubsystems
+    className: XRReferenceImageLibrary
   - hash:
       serializedVersion: 2
       Hash: a63fc1a3b035e5a0b5839cd7f7b3086e
@@ -1884,10 +2123,28 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
+      Hash: 290afc8da8e459e0b8dc7444bfaf5e35
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: AREnvironmentProbe
+  - hash:
+      serializedVersion: 2
       Hash: 8649814970b42d345b89944b862453cc
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SubMesh
+  - hash:
+      serializedVersion: 2
+      Hash: 8ab9295d94483c961936d82d233d3df2
+    assemblyName: Unity.XR.Management.dll
+    namespaceName: UnityEngine.XR.Management
+    className: XRManagerSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 9f6697b12a6e3ed594d6a9a8a7e07854
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CarController
   - hash:
       serializedVersion: 2
       Hash: 20eeaeae829475b5e354d1f626c51a2b
@@ -1908,6 +2165,12 @@ ScriptsOnlyBuild:
     className: Dropdown
   - hash:
       serializedVersion: 2
+      Hash: 364e3cd008459d079ce19ca42999b8d5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LevelLoader
+  - hash:
+      serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -1918,18 +2181,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Toggle
-  - hash:
-      serializedVersion: 2
-      Hash: 32280b797839f393633d2652c0400d85
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: GameServicesDemo_SavedGames
-  - hash:
-      serializedVersion: 2
-      Hash: 651ffaeea29b8a0ff106c42abc6dc021
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: GifDemo
   - hash:
       serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
@@ -1966,12 +2217,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 6a1940227f2a2b66d557f3d62a2d86c7
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: EasyMobile.Demo
-    className: AdvertisingDemo
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
@@ -1984,5 +2229,9 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Swiatla.unity
   - Assets/Scenes/Sortowanie3_2.unity
   - Assets/Scenes/Swiatla3.unity
-  - Assets/Scenes/Zolw.unity
-  playerPath: C:/Users/user/Desktop/ekogame/Ekoprzygoda.apk
+  - Assets/Scenes/SampleScene.unity
+  - Assets/Scenes/AR.unity
+  - Assets/Scenes/test 1.unity
+  - Assets/Scenes/test 2.unity
+  - Assets/Scenes/Car.unity
+  playerPath: C:/Users/user/Desktop/Ekoprzygoda.apk

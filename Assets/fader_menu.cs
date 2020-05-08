@@ -9,10 +9,10 @@ public class fader_menu : MonoBehaviour
 
 
 
-    public byte bar =255;
+    [SerializeField] private byte bar =255;
     bool canAnim;
-    public GameObject blck;
-    public byte incr;
+    [SerializeField] private GameObject blck;
+    [SerializeField] private byte incr;
    
 
     // Start is called before the first frame update

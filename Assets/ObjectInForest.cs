@@ -7,7 +7,7 @@ public class ObjectInForest : MonoBehaviour
 {
 
     private Animator anim;
-    public float delay = 0f;
+    [SerializeField] private float delay = 0f;
 
 
 

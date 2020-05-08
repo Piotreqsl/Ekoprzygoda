@@ -132,7 +132,7 @@ public class TrashIdentifier : MonoBehaviour
         SpriteRenderer sr = this.gameObject.GetComponent<SpriteRenderer>();
         sr.sprite = kosz;
 
-        DragAndDrop dad = b.GetComponent<DragAndDrop>();
+        
        
 
 
@@ -177,7 +177,7 @@ public class TrashIdentifier : MonoBehaviour
 
 
                 respawnNext = false;
-                Debug.Log("Niepoprawnie wyrzucony " + b1.name + " do " + rodzaj);
+                //Debug.Log("Niepoprawnie wyrzucony " + b1.name + " do " + rodzaj);
                 b1.transform.position = spawnpoint;
                 
                 ScoreCounter.scoreVal = 0;
@@ -206,7 +206,7 @@ public class TrashIdentifier : MonoBehaviour
 
 
 
-                var smiec_img = Resources.Load<Sprite>("TrashToSpawn/" +b1.name);
+                var smiec_img = Resources.Load<Sprite>("NewTrashToSpawn/" +b1.name);
 
                 smiec.gameObject.GetComponent<Image>().sprite = smiec_img;
 
@@ -243,7 +243,7 @@ public class TrashIdentifier : MonoBehaviour
                     correct = "elektrosmieci";
                 }
 
-                Debug.Log(correct);
+                //Debug.Log(correct);
                 
 
 

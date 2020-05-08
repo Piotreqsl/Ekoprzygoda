@@ -6,11 +6,11 @@ using UnityEngine;
 
 public class SpritePicker : MonoBehaviour
 {
-    private const string V = "/Assety/Resources/TrashToSpawn";
-    public Vector3 spawnpoint;
+   
+    [SerializeField] private Vector3 spawnpoint;
     public GameObject sprite;
     SpriteRenderer sr;
-    public String[] arr;
+    [SerializeField] private String[] arr;
 
     public GameObject helpCanv;
 
@@ -21,6 +21,7 @@ public class SpritePicker : MonoBehaviour
         spawnpoint = GameObject.FindGameObjectWithTag("Respawn").transform.position;
         sprite.gameObject.tag = "trash";
         Instantiate(sprite);
+        sprite.transform.localScale = new Vector3(0.5f, 0.5f, 1f);
         sprite.transform.position = spawnpoint;
     }
 

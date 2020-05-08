@@ -2697,13 +2697,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rodzaj: papier
   acceptedItems:
-  - kartka
-  - ksiazka
-  - ksiega
-  - mleko
-  - notatka
-  - teczka
-  - zawieszka
+  - kartki
+  - karton
+  - zeszyt
+  - zeszyt2
+  - zeszyt3
   spawnpoint: {x: 0, y: 0, z: 0}
   s: {fileID: 0}
   trashcan: {x: 0, y: 0, z: 0}
@@ -3288,20 +3286,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rodzaj: zmieszane
   acceptedItems:
-  - plaster
-  - paleta
-  - pedzel
-  - walekdrewno
-  - walek
-  - kubek
-  - rekawica
-  - plaster
-  - deska
-  - ser
-  - plyta
-  - lody
-  - olowek
-  - pilka
+  - but
+  - but2
+  - klocek1
+  - klocek2
+  - klocek3
+  - tea
   spawnpoint: {x: 0, y: 0, z: 0}
   s: {fileID: 0}
   trashcan: {x: 0, y: 0, z: 0}
@@ -4176,8 +4166,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rodzaj: bio
   acceptedItems:
-  - jablko
-  - ser
+  - ogryzek
+  - "Sk\xF3rka od banana"
+  - skorupka
   spawnpoint: {x: 0, y: 0, z: 0}
   s: {fileID: 0}
   trashcan: {x: 0, y: 0, z: 0}
@@ -4728,11 +4719,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rodzaj: szklo
   acceptedItems:
-  - czerwonysok
-  - kieliszek
-  - probowki
-  - zielonysok
-  - piwo
+  - butelka
+  - butelka2
+  - "s\u0142oik"
   spawnpoint: {x: 0, y: 0, z: 0}
   s: {fileID: 0}
   trashcan: {x: 0, y: 0, z: 0}
@@ -6088,27 +6077,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rodzaj: metale
   acceptedItems:
-  - butelka
-  - apteczka
-  - torba
-  - klucz
-  - kluczplaski
-  - gwozdz
+  - butelka plastikowa
   - garnek
-  - noz
-  - pila
-  - widly
-  - stetoskop
-  - szczypce
-  - termos
-  - patelnia
-  - kierownica
-  - szczot
-  - miska
-  - kompas
-  - brelok
-  - czajnik
-  - id
+  - kartonik po mleku
+  - metalowa puszka
   spawnpoint: {x: 0, y: 0, z: 0}
   s: {fileID: 0}
   trashcan: {x: 0, y: 0, z: 0}

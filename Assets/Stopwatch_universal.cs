@@ -149,7 +149,7 @@ public class Stopwatch_universal : MonoBehaviour
         
 
 
-        // co tu kurwa trezba zroibc zeby to gowno zpauzowac??
+       
         isWon = true;
         mustRun = false;
 

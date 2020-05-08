@@ -8,10 +8,10 @@ public class ForestNamePicker : MonoBehaviour
 {
 
     private const string V = "/Resources/TrashToSpawn";
-    public Vector3 spawnpoint;
-    public GameObject sprite;
+    [SerializeField] private Vector3 spawnpoint;
+    [SerializeField] private GameObject sprite;
     SpriteRenderer sr;
-    public String[] arr;
+    [SerializeField] private String[] arr;
 
 
     GameObject gm;

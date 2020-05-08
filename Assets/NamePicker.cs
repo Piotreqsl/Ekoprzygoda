@@ -8,10 +8,10 @@ public class NamePicker : MonoBehaviour
 {
 
     private const string V = "/Resources/TrashToSpawn";
-    public Vector3 spawnpoint;
-    public GameObject sprite;
+    [SerializeField] private Vector3 spawnpoint;
+    [SerializeField] private GameObject sprite;
     SpriteRenderer sr;
-    public String[] arr;
+    [SerializeField] private String[] arr;
 
 
     GameObject gm;
@@ -23,7 +23,7 @@ public class NamePicker : MonoBehaviour
     {
         BetterStreamingAssets.Initialize();
 
-        string[] paths2 = BetterStreamingAssets.GetFiles("trash", "*.png", SearchOption.AllDirectories);
+        string[] paths2 = BetterStreamingAssets.GetFiles("new_trash", "*.png", SearchOption.AllDirectories);
         
         
 
@@ -46,13 +46,13 @@ public class NamePicker : MonoBehaviour
             amount++;
         }
 
-        Debug.Log("Amount to kurwa głyupia0" + amount);
+      
 
         arr = new String[amount/2];
 
         foreach (FileInfo f in info)
         {
-            Debug.LogWarning("Czy w ogóle foreach kurwa działa");
+            
             
             string nazwa = f.ToString();
             Debug.LogWarning("f.Tostring() = " + nazwa);
@@ -97,14 +97,14 @@ public class NamePicker : MonoBehaviour
         Debug.Log(r);
 
         string ok = paths2[r];
-        ok = ok.Remove(0, 6);
+        ok = ok.Remove(0, 10);
         ok = ok.Replace(".png", string.Empty);
 
         Debug.Log(ok);
 
 
         this.name = ok;
-        var sprite_res = Resources.Load<Sprite>("TrashToSpawn/" + ok);
+        var sprite_res = Resources.Load<Sprite>("NewTrashToSpawn/" + ok);
         this.GetComponent<SpriteRenderer>().sprite = sprite_res;
 
     }

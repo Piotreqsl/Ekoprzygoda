@@ -8,12 +8,12 @@ public class MainMenuScript : MonoBehaviour
 {
 
     bool canT;
-    public float timer;
-    public byte bar;
-    public float fTimer;
-    public GameObject blck;
-    public byte incr;
-    public bool complete;
+    [SerializeField] private float timer;
+    [SerializeField] private byte bar;
+    [SerializeField] private float fTimer;
+    [SerializeField] private GameObject blck;
+    [SerializeField] private byte incr;
+    [SerializeField] private bool complete;
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +59,8 @@ public class MainMenuScript : MonoBehaviour
     }
 
 
-    public void toMenu() {
+    [SerializeField]
+    private void toMenu() {
 
         Debug.Log("debug");
         canT = true;

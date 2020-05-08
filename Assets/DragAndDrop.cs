@@ -10,7 +10,7 @@ public class DragAndDrop : MonoBehaviour
     private Vector3 mousePos;
 
     private Vector2 initialPos;
-     private Camera camera;
+    private Camera camera;
 
     private void Start()
     {
@@ -37,6 +37,7 @@ public class DragAndDrop : MonoBehaviour
 
     }
 
+   
     private void OnMouseDown()
     {
 
@@ -55,7 +56,7 @@ public class DragAndDrop : MonoBehaviour
     }
 
 
-    private int collisionCount = 0;
+     private int collisionCount = 0;
 
     
 
@@ -72,6 +73,7 @@ public class DragAndDrop : MonoBehaviour
 
 
 
+   
     private void OnMouseUp()
     {
         isBeingHeld = false;
